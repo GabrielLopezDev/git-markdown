@@ -61,12 +61,15 @@ $ git remote -v
 ```
 
 ### Hacer push:
+#### **Cuando se impulsa una nueva rama a remoto:**
+> Esto crea una rama de seguimiento ascendente  con una relación
+duradera con su rama local (*-u* **equivale a** *--set-upstream*)
 ```Shell Session
-# Cuando se impulsa una nueva rama a remoto:
-$ git push -u origin <nombre-rama>		// Esto crea una rama de seguimiento ascendente  con una relación
-										// duradera con su rama local (-u equivale a --set-upstream)
+$ git push -u origin <nombre-rama>
+```
 
-# Cuando ya existe la rama en remoto:
+#### **Cuando ya existe la rama en remoto:**
+```Shell Session
 $ git push
 ```
 
@@ -111,9 +114,7 @@ $ git log --graph
 $ git log --oneline
 ```
 
-> **NOTA:**
-
-> Para salir del $ git log se debe presionar: "**q**" para salir "**h**" para ayuda.
+> **NOTA:** Para salir del *$ git log* se debe presionar: **q** para salir **h** para ayuda.
 
 ### Realizar un merge:
 > Debe posicionarse en la rama a la que desea mezclar y hacer el merge de la rama con los cambios.
