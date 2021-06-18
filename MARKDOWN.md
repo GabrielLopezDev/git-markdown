@@ -50,6 +50,8 @@ Formato ~~tachado~~
 
 
 # CODE SNIPPETS:
+> Markdown utiliza una librería llamada highlight.js donde se encuentran todos los resaltados de sintaxis disponibles.
+
 C++:
 ```C++
 #include <iostream>
