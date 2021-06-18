@@ -61,14 +61,14 @@ $ git remote -v
 ```
 
 ### Hacer push:
-#### **Cuando se impulsa una nueva rama a remoto:**
+##### **Cuando se impulsa una nueva rama a remoto:**
 > Esto crea una rama de seguimiento ascendente  con una relación
 duradera con su rama local (*-u* **equivale a** *--set-upstream*)
 ```Shell Session
 $ git push -u origin <nombre-rama>
 ```
 
-#### **Cuando ya existe la rama en remoto:**
+##### **Cuando ya existe la rama en remoto:**
 ```Shell Session
 $ git push
 ```
@@ -191,7 +191,7 @@ $ git push origin <nombre-etiqueta>
 >En ocaciones, queremos deshacer el último commit que hemos hecho porque cometimos un error. Si todavía **no has hecho push**, existen dos formas de hacer esto y dependerá de si quieres, o no, mantener
 los cambios del commit.
 
-#### **Si quieres mantener los cambios:**
+##### **Si quieres mantener los cambios:**
 ```Shell Session
 $ git reset --soft HEAD~1
 ```
@@ -200,7 +200,7 @@ $ git reset --soft HEAD~1
 
 > El parámetro *--soft* es el que va a hacer que los cambios que habíamos hecho en el commit, en lugar de eliminarlos, nos los mantenga como cambios locales en nuestro repositorio.
 
-####  **Si *NO* quieres mantener los cambios:**
+#####  **Si *NO* quieres mantener los cambios:**
 ```Shell Session
 $ git reset --hard HEAD~1
 ```
@@ -210,12 +210,12 @@ $ git reset --hard HEAD~1
 ### Si quieres arreglar el último commit **Y NO HAS HECHO PUSH**
 > Si **no quieres** tirar atrás el último commit que has hecho si no que simplemente quieres **arreglarlo**. Existen dos opciones:
 
-#### **Sólo quieres arreglar el mensaje que has usado para el último commit:**
+##### **Sólo quieres arreglar el mensaje que has usado para el último commit:**
 ```Shell Session
 $ git commit --amend -m "Este es el mensaje correcto"
 ```
 
-#### **Quieres añadir más cambios al último commit:**
+##### **Quieres añadir más cambios al último commit:**
 ```Shell Session
 # Añade los archivos con modificaciones que quieres añadir al commit anterior
 $ git add <nombre-del-archivo>
