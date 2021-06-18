@@ -186,3 +186,51 @@ $ git push --tags
 ```Shell Session
 $ git push origin <nombre-etiqueta>
 ```
+
+### Deshacer el último commit **NO PUBLICADO**:
+>En ocaciones, queremos deshacer el último commit que hemos hecho porque cometimos un error. Si todavía **no has hecho push**, existen dos formas de hacer esto y dependerá de si quieres, o no, mantener
+los cambios del commit.
+
+#### **Si quieres mantener los cambios:**
+```Shell Session
+$ git reset --soft HEAD~1
+```
+
+> Con el comando *reset* hacemos que la rama actual retroceda a la revisión que le indicamos. En este caso le decimos *HEAD~1* que significa: queremos volver a la versión inmediatamente anterior a la que estamos ahora.
+
+> El parámetro *--soft* es el que va a hacer que los cambios que habíamos hecho en el commit, en lugar de eliminarlos, nos los mantenga como cambios locales en nuestro repositorio.
+
+####  **Si *NO* quieres mantener los cambios:**
+```Shell Session
+$ git reset --hard HEAD~1
+```
+
+> El parametro *--hard* eliminará todos los cambios de los que habíamos hecho commit anteriormente. ¡⚠️ Asegúrate que eso es lo que quieres antes de hacerlo ⚠️!
+
+### Si quieres arreglar el último commit **Y NO HAS HECHO PUSH**
+> Si **no quieres** tirar atrás el último commit que has hecho si no que simplemente quieres **arreglarlo**. Existen dos opciones:
+
+#### **Sólo quieres arreglar el mensaje que has usado para el último commit:**
+```Shell Session
+$ git commit --amend -m "Este es el mensaje correcto"
+```
+
+#### **Quieres añadir más cambios al último commit:**
+```Shell Session
+# Añade los archivos con modificaciones que quieres añadir al commit anterior
+$ git add <nombre-del-archivo>
+
+# Vuelve a hacer el commit con el parámetro amend
+$ git commit --amend -m "Mensaje del commit"
+```
+
+> Ya sea que sólo quieras **cambiar el mensaje del commit** o que quieras **añadir modificaciones al último commit**, lo importante es que esto **NO va a crear un nuevo commit** si no que va a **solucionar el anterior**.
+
+> **IMPORTANTE:** El parámetro de *--amend* es muy útil, pero sólo funciona con el último commit y siempre y cuando **NO esté publicado**. Si ya has hecho push de ese commit, esto **no va a funcionar**. Deberías hacer un *git revert* en su lugar.
+
+### Deshacer un commit (ya publicado)
+> Si ya has hecho **push**, tendrás la opción de un **revert** de tus cambios indicando el commit que quieres **deshacer**.
+
+```Shell Session
+$ git revert <identificador-del-commit>
+```
